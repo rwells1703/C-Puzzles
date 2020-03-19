@@ -2,22 +2,22 @@
 
 void main()
 {
-  int n, odd = 0, even = 0;
+  int n = 0;
+  int odd = 0;
+  int even = 0;
+  
   printf("Enter a number: ");
-  scanf("%d",&n);
+  scanf("%d", &n);
 
-  for (int i=0; 2*i<n; i++)
+  for (int i = 0; i <= n; i++)
   {
-    if ((2*i+1)%3 != 0 && (2*i+1)%4 != 0)
-    {
-      odd = odd + 2*i+1;
-    }
-
-    if ((2*i)%3 != 0 && (2*i)%4 != 0)
-    {
-      even = even + 2*i;
+    if (i%3 != 0 && i%4 != 0) {
+      if (i%2 == 0) {
+        even += i;
+      } else {
+        odd += i;
+      }
     }
   }
-  printf("Odd: %d\nEven: %d\nAll: %d",odd,even,odd+even);
-  scanf("%*s");
+  printf("Odd: %d\nEven: %d\nAll: %d", odd, even, odd + even);
 }
